@@ -27,6 +27,17 @@ namespace WindowsFormsApp
             btn.Cursor = Cursors.Hand;
             form.Controls.Add(btn);
         }
+        public void btn(BtnBean2 bb)
+        {
+            Button btn = new Button();
+            btn.DialogResult = DialogResult.OK;
+            btn.Name = bb.Name;
+            btn.Text = bb.Txt;
+            btn.Size = new Size(bb.SizeX, bb.SizeY);
+            btn.Location = new Point(bb.PX, bb.PY);
+            btn.Cursor = Cursors.Hand;
+            form.Controls.Add(btn);
+        }
 
         public void lb(LbBean lb)
         {
@@ -45,7 +56,6 @@ namespace WindowsFormsApp
             pn.Size = new Size(pa.SizeX, pa.SizeY);
             pn.Location = new Point(pa.PX, pa.PY);
             pn.BackColor = Color.LightSlateGray;
-
         }
     }
 }

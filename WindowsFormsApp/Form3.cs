@@ -44,11 +44,12 @@ namespace WindowsFormsApp
             Class1 c1 = new Class1(this);
             ArrayList arr = new ArrayList();
 
-            arr.Add(new BtnBean(this, "button1", "검색", 50, 30, 5, 420));
-            arr.Add(new BtnBean(this, "button2", "+", 50, 30, 5, 30));
-            arr.Add(new BtnBean(this, "button3", "전송", 40, 22, 272, 420));
+            arr.Add(new BtnBean2(this, "button1", "검색", 50, 30, 5, 410));
+            arr.Add(new BtnBean2(this, "button2", "+", 50, 30, 5, 30));
+            arr.Add(new BtnBean2(this, "button3", "전송", 40, 22, 272, 420));
             arr.Add(new LbBean(this, "label1", "채널", 30, 20, 15, 0));
-            arr.Add(new PnBean(this, "pnname1", 60, 489, 0, 0));
+           // arr.Add(new PnBean(this, "pnname1", 60, 489, 0, 0));
+
             for(int i = 0; i < arr.Count; i++)
             {
                 if(typeof(BtnBean)==arr[i].GetType())
@@ -58,16 +59,15 @@ namespace WindowsFormsApp
                 else if(typeof(LbBean)==arr[i].GetType())
                 {
                     c1.lb((LbBean)arr[i]);
-
                 }
                 else if (typeof(PnBean) == arr[i].GetType())
                 {
                     c1.pn((PnBean)arr[i]);
                 }
             }
-            
+
+            Controls.Add(panel_view());
             Controls.Add(list_view());
-     
             Controls.Add(userlist_status());
             Controls.Add(chatbox_create());
             for (int j = 0; j < 10; j++)
@@ -78,7 +78,6 @@ namespace WindowsFormsApp
                 }
             }
             BackColor = Color.Gray;
-
         }
         
         /*private void chatting_func(object o, EventArgs e)
@@ -145,6 +144,15 @@ namespace WindowsFormsApp
             return lv;
 
         }//채팅창
+
+        private Panel panel_view()
+        {
+            Panel pn = new Panel();
+            pn.Size = new Size(60,489);
+            pn.Location = new Point(0,0);
+            pn.BackColor = Color.LightSlateGray;
+            return pn;
+        }
 
         private ListView userlist_status()
         {

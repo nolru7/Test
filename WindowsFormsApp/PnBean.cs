@@ -15,6 +15,7 @@ namespace WindowsFormsApp
         int sizeY;
         int pX;
         int pY;
+        
         public PnBean(Form form, string name, int sizeX, int sizeY, int pX, int pY)
         {
             this.form = form;
@@ -39,7 +40,6 @@ namespace WindowsFormsApp
                 return name;
             }
         }
-      
         public int SizeX
         {
             get

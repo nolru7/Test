@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp
 {
-    class BtnBean
+    class BtnBean2
     {
         Form form;
         string name;
@@ -16,8 +16,7 @@ namespace WindowsFormsApp
         int sizeY;
         int pX;
         int pY;
-        public EventHandler eh;
-        public BtnBean(Form form, string name, string txt, int sizeX, int sizeY, int pX, int pY, EventHandler eh)
+        public BtnBean2(Form form, string name, string txt, int sizeX, int sizeY, int pX, int pY)
         {
             this.form = form;
             this.name = name;
@@ -26,7 +25,6 @@ namespace WindowsFormsApp
             this.sizeY = sizeY;
             this.pX = pX;
             this.pY = pY;
-            this.eh = eh;
         }
 
         public Form Form
