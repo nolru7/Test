@@ -30,6 +30,7 @@ namespace WindowsFormsApp
             arr.Add(new LbBean(this, "label1", "채널", 30, 20, 15, 0));
             arr.Add(new PnBean(this, "pnname1", 60, 489, 0, 0));
             arr.Add(new BtnBean(this, "button2", "+", 50, 30, 5, 30, btn_click));
+         //   arr.Add(new BtnBean(this, "button2", "+", 50, 30, 5, 80, btn_click2));
             Button bt = new Button();
 
             for (int i = 0; i < arr.Count; i++)
@@ -58,6 +59,12 @@ namespace WindowsFormsApp
 
         private void btn_click(object o, EventArgs e)
         {
+            Form2 showForm2 = new Form2();
+
+            showForm2.Show();
+
+
+            /*
             Button btn = new Button();
             Class1 c1 = new Class1(this);
            
@@ -76,8 +83,14 @@ namespace WindowsFormsApp
             {
                 c1.btn((BtnBean)arr2[i]);
                 c1.btn((BtnBean2)arr2[i]);
-            }
+            }*/
             //arr2[count] = arr2[count - 1];
         }
-    }
+        private void btn_click2(object o, EventArgs e)
+        {
+            Form3 showForm3 = new Form3();
+
+            showForm3.Show();
+        }
+        }
 }
