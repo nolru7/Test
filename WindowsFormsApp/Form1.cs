@@ -26,15 +26,21 @@ namespace WindowsFormsApp
             Class1 c1 = new Class1(this);
             ArrayList arr = new ArrayList();
 
-            arr.Add(new BtnBean2(this, "button1", "검색", 50, 30, 5, 420));
-            arr.Add(new LbBean(this, "label1", "채널", 30, 20, 15, 0));
-            arr.Add(new PnBean(this, "pnname1", 60, 489, 0, 0));
-            arr.Add(new BtnBean(this, "button2", "+", 50, 30, 5, 30, btn_click));
-         //   arr.Add(new BtnBean(this, "button2", "+", 50, 30, 5, 80, btn_click2));
-            Button bt = new Button();
+            BackColor = Color.DimGray;
 
+            arr.Add(new BtnBean2(this, "button1", "뉴스", 100, 30, 100, 0));
+            arr.Add(new BtnBean2(this, "button1", "라이브러리", 100, 30, 100, 40));
+            arr.Add(new BtnBean2(this, "button1", "스토어", 100, 30, 100, 80));
+            arr.Add(new LbBean(this, "label1", "채널", 30, 20, 15, 0));
+            // arr.Add(new PnBean(this, "pnname1", 60, 489, 0, 0));
+            arr.Add(new BtnBean2(this, "button1", "검색", 50, 30, 5, 420));
+            arr.Add(new BtnBean(this, "button2", "+", 50, 30, 5, 30, btn_click));
+            
+            Button bt = new Button();
+            
             for (int i = 0; i < arr.Count; i++)
             {
+
                 if (typeof(BtnBean2) == arr[i].GetType())
                 {
                     c1.btn((BtnBean2)arr[i]);
@@ -52,45 +58,57 @@ namespace WindowsFormsApp
                     c1.pn((PnBean)arr[i]);
                 }
             }
-            bt.Click += btn_click;
+           // bt.Click += btn_click;
         }
 
         ArrayList arr2 = new ArrayList();
 
         private void btn_click(object o, EventArgs e)
         {
-            Form2 showForm2 = new Form2();
 
-            showForm2.Show();
-
-
-            /*
             Button btn = new Button();
             Class1 c1 = new Class1(this);
-           
-            arr2.Clear();
-            if (btn.Text == "+")
+
+            for (int i = 0; i < arr2.Count; i++)
             {
-                for (int i = 0; i < count; i++)
+                if (btn.Name == "button2")
                 {
-                    arr2.Add(new BtnBean2(this, string.Format("channle{0}", i + 1), string.Format("채널{0}", i + 1), 50, 30, 5, (30 * i + 1)));
+                    btn.Dispose();
                 }
             }
+
+            for (int i = 0; i < count; i++)
+            {
+                arr2.Add(new BtnBean2(this, string.Format("button2"), string.Format("채널{0}", i + 1), 50, 30, 5, (30 * i + 1)));
+            }
+            
             count++;
             arr2.Add(new BtnBean(this, "button2", "+", 50, 30, 5, (30 * count + 20), btn_click));
-         
+
             for (int i = 0; i < arr2.Count; i++)
             {
                 c1.btn((BtnBean)arr2[i]);
                 c1.btn((BtnBean2)arr2[i]);
-            }*/
+            }
             //arr2[count] = arr2[count - 1];
         }
+        /*  private Panel panel()
+          {
+              Panel pn = new Panel();
+              pn.Size = new Size(60, 489);
+              pn.Location = new Point(0, 0);
+              pn.BackColor = Color.LightSlateGray;
+              pn.SendToBack();
+              return pn;
+          }
+          */
+        //dispose 버튼 지우기
+
         private void btn_click2(object o, EventArgs e)
         {
             Form3 showForm3 = new Form3();
 
             showForm3.Show();
         }
-        }
+    }
 }
