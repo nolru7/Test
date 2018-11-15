@@ -22,6 +22,10 @@ namespace WindowsFormsApp
         private Button btn;
         private Label lb;
 
+
+
+
+
         private void Form2_Load(object sender, EventArgs e)
         {
             // 가상 데이터 생성
@@ -46,7 +50,25 @@ namespace WindowsFormsApp
 
 
             arrList.Add(new Item("label", 1100, 30, "채널 인원"));
+            //리스트뷰
+            ListView listView1 = new ListView();
 
+            ColumnHeader columnHeader1 = new ColumnHeader();
+            
+            listView1.Columns.Add(columnHeader1);
+            
+            columnHeader1.Text = "user1";
+            columnHeader1.Width = 200;
+            columnHeader1.TextAlign = HorizontalAlignment.Left;
+            
+            listView1.GridLines = false;
+            listView1.Location = new Point(200, 80);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(200, 20);
+            listView1.TabIndex = 0;
+            
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
 
 
             for (int i = 0; i < arrList.Count; i++) // 가상 데이터를 이용한 화면 구성하기
@@ -54,8 +76,8 @@ namespace WindowsFormsApp
                 Control ctr = Control_Create((Item)arrList[i]); // 구성될 각 화면 내용 받아오기
                 Controls.Add(ctr); // 받아온 Control 정보를 이용하여 화면 구성하기
             }
+            Controls.Add(listView1);
 
-            
         }
 
         private Control Control_Create(Item item)
@@ -155,8 +177,7 @@ namespace WindowsFormsApp
 
         }
 
-
-
+       
     }
 
     public class Item // Control 객체 생성 시 필요한 속성 정보 담을 객체 생성
