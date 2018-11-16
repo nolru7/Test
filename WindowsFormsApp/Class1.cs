@@ -25,6 +25,7 @@ namespace WindowsFormsApp
             btn.Size = new Size(bb.SizeX, bb.SizeY);
             btn.Location = new Point(bb.PX, bb.PY);
             btn.Cursor = Cursors.Hand;
+            btn.Click += bb.eh;
             form.Controls.Add(btn);
         }
         public void btn(BtnBean2 bb)
@@ -46,7 +47,6 @@ namespace WindowsFormsApp
             label.Text = lb.Txt;
             label.Size = new Size(lb.SizeX, lb.SizeY);
             label.Location = new Point(lb.PX, lb.PY);
-            label.Cursor = Cursors.Hand;
             form.Controls.Add(label);
         }
 
