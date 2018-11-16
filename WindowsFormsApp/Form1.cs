@@ -117,7 +117,7 @@ namespace WindowsFormsApp
             Panel pn = new Panel();
             pn.Size = new Size(2, 489);
             pn.Location = new Point(75, 0);
-            pn.BackColor = Color.FromArgb(0,50,0);
+            pn.BackColor = Color.FromArgb(40,0,0);
             return pn;
         }
 
